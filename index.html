@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Bedrock Text Generator — Colored & Styled Text</title>
+    <meta name="description" content="A visual tool for creating text with colors and § formatting compatible with Minecraft Bedrock.">
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico" />
+</head>
+<body>
+
+    <header id="app-header">
+        <h1><img src="src/assets/icons/logo.svg" alt="Logo" class="header-logo"> Minecraft Bedrock Text Generator</h1>
+        <p class="subtitle">Text editor with formatting for Minecraft Bedrock</p>
+    </header>
+
+    <main id="app-main">
+        <section id="editor-section" class="card editor-card">
+            <div id="editor-toolbar">
+                <div id="style-tools" class="toolbar-row">
+                    <button class="toolbar-btn" id="btn-bold" title="Bold (§l)" aria-label="Insert bold code" aria-pressed="false"><img src="src/assets/icons/bold.svg" alt="B" class="btn-icon"></button>
+                    <button class="toolbar-btn" id="btn-italic" title="Italic (§o)" aria-label="Insert italic code" aria-pressed="false"><img src="src/assets/icons/italic.svg" alt="I" class="btn-icon"></button>
+                    <button class="toolbar-btn" id="btn-reset" title="Reset formatting (§r)" aria-label="Insert reset code"><img src="src/assets/icons/eraser.svg" alt="" class="btn-icon"></button>
+
+                    <div class="toolbar-separator"></div>
+                    <button class="toolbar-btn" id="btn-newline" title="Line break (\n)" aria-label="Insert line break"><img src="src/assets/icons/line_break.svg" alt="↵" class="btn-icon"></button>
+                    <button class="toolbar-btn" id="btn-tab" title="Tab (\t)" aria-label="Insert tab"><img src="src/assets/icons/keyboard_tab.svg" alt="⇥" class="btn-icon"></button>
+                    <div class="toolbar-separator"></div>
+                    <button class="toolbar-btn btn-danger" id="btn-clear-all" title="Clear all content" aria-label="Clear all"><img src="src/assets/icons/delete.svg" alt="🗑" class="btn-icon"></button>
+
+                    <div class="toolbar-separator"></div>
+                    <div id="color-palette" class="color-palette-inline" role="group" aria-label="Minecraft color palette"><!-- JS --></div>
+                    <div class="toolbar-spacer"></div>
+                    <button id="btn-copy" class="copy-btn" title="Copy the complete Bedrock text">Copy</button>
+                </div>
+            </div>
+            <div id="editor-surface"><pre id="editor-highlight" aria-hidden="true"></pre><textarea id="editor" spellcheck="false" wrap="soft" aria-label="Bedrock text editor with visible formatting codes" placeholder="Type or paste text with § codes here..."></textarea>
+            </div>
+        </section>
+        
+        <section id="preview-section" class="card"><h2>Preview</h2><div id="preview" aria-label="Formatted text preview"></div></section>
+
+    </main>
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <script src="src/js/bedrock-syntax.js"></script>
+    <script src="src/js/utils.js"></script>
+    <script src="src/js/editor.js"></script>
+    <script src="src/js/app.js"></script>
+</body>
+</html>
